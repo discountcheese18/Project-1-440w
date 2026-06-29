@@ -1,21 +1,114 @@
-<<<<<<< HEAD
-# React + Vite
+# Remedium Health Market
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Remedium Health Market is a healthcare marketplace prototype developed as part of the Penn State IST 440W Capstone Project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The platform is designed to improve healthcare transparency by allowing patients to compare estimated treatment prices, obtain multiple medical opinions, securely share medical records, and schedule appointments through a single web application.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Compare estimated treatment prices between healthcare providers
+- Browse healthcare providers and specialists
+- Request second medical opinions
+- Upload and manage medical records
+- Schedule appointments
+- Patient dashboard displaying healthcare activity
+- Modern responsive user interface built with React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Project-1-440w
-test
->>>>>>> ca3c4d832493426bf1f9db9a299e49a76073f998
+---
+
+## Technologies Used
+
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- React Router
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/discountcheese18/Project-1-440w.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd Project-1-440w
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local development URL shown in the terminal (typically `http://localhost:5173`, though Vite may use another available port such as `5174` or `5175`).
+
+---
+
+## Project Objectives
+
+The primary objectives of Remedium Health Market are to:
+
+- Increase healthcare price transparency
+- Simplify obtaining second medical opinions
+- Centralize medical record sharing
+- Improve appointment scheduling
+- Help patients make more informed healthcare decisions
+
+---
+
+## Current Prototype
+
+The current prototype includes:
+
+- Home Page
+- Provider Search
+- Treatment Price Comparison
+- Medical Record Upload
+- Appointment Scheduling
+- Patient Dashboard
+
+---
+
+## Future Enhancements
+
+- User authentication
+- Secure patient messaging
+- Insurance verification
+- Provider ratings and reviews
+- Interactive provider map
+- Real-time appointment availability
+- Mobile application
+- Electronic Health Record (EHR) integration
+
+---
+
+## Project Status
+
+This repository contains the implementation prototype developed for the Penn State IST 440W Capstone Project. The application demonstrates the core functionality and user interface for the proposed healthcare marketplace.
+
+---
+
+## Author
+
+Robert Bleecker
+
+Penn State University
+
+IST 440W Capstone Project
