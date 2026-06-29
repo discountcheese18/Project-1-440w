@@ -30,7 +30,9 @@ function Schedule() {
           placeholder="Describe your symptoms or reason for appointment"
         />
 
-        <button>Request Appointment</button>
+        <button onClick={() => alert("Appointment request submitted successfully.")}>
+  Request Appointment
+</button>
 
       </div>
 
