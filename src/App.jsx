@@ -1,49 +1,35 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import FindDoctors from "./pages/FindDoctors";
+import ComparePrices from "./pages/ComparePrices";
+import UploadRecords from "./pages/UploadRecords";
+import Schedule from "./pages/Schedule";
+import Dashboard from "./pages/Dashboard";
+
+import "./App.css";
+
 function App() {
   return (
-    <div
-      style={{
-        fontFamily: "Arial, sans-serif",
-        padding: "40px",
-        backgroundColor: "#f5f7fa",
-        minHeight: "100vh",
-      }}
-    >
-      <h1 style={{ color: "#0066cc" }}>MedConnect</h1>
+    <BrowserRouter>
+      <div className="app">
+        <Navbar />
 
-      <h2>Your Healthcare Marketplace</h2>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/doctors" element={<FindDoctors />} />
+          <Route path="/prices" element={<ComparePrices />} />
+          <Route path="/records" element={<UploadRecords />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
 
-      <p>
-        Compare treatment prices, receive multiple medical opinions,
-        securely upload medical imaging, and schedule appointments—all
-        in one place.
-      </p>
-
-      <hr />
-
-      <h3>Main Features</h3>
-
-      <ul>
-        <li>💲 Compare healthcare prices</li>
-        <li>👨‍⚕️ Multiple doctor opinions</li>
-        <li>🩻 MRI & medical image sharing</li>
-        <li>🔒 Secure patient records</li>
-        <li>📅 Appointment scheduling</li>
-      </ul>
-
-      <button
-        style={{
-          background: "#0066cc",
-          color: "white",
-          border: "none",
-          padding: "12px 24px",
-          borderRadius: "8px",
-          cursor: "pointer",
-          marginTop: "20px",
-        }}
-      >
-        Get Started
-      </button>
-    </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
