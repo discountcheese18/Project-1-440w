@@ -9,6 +9,7 @@ import ComparePrices from "./pages/ComparePrices";
 import UploadRecords from "./pages/UploadRecords";
 import Schedule from "./pages/Schedule";
 import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/records" element={<UploadRecords />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
         <Footer />

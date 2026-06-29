@@ -19,7 +19,9 @@ function PriceCard({ provider }) {
         <strong>Wait Time:</strong> {provider.wait}
       </p>
 
-      <button>Schedule Appointment</button>
+      <button onClick={() => alert("Provider selected. Continue to scheduling.")}>
+  Select Provider
+</button>
     </div>
   );
 }

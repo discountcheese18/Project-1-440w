@@ -17,7 +17,9 @@ function UploadRecords() {
 
           <input type="file" />
 
-          <button>Upload File</button>
+          <button onClick={() => alert("Medical record uploaded successfully.")}>
+  Upload File
+</button>
 
         </div>
 
