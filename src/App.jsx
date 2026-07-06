@@ -10,6 +10,7 @@ import UploadRecords from "./pages/UploadRecords";
 import Schedule from "./pages/Schedule";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import CreateAccount from "./pages/CreateAccount";
 
 import "./App.css";
 
@@ -20,14 +21,15 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/doctors" element={<FindDoctors />} />
-          <Route path="/prices" element={<ComparePrices />} />
-          <Route path="/records" element={<UploadRecords />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/doctors" element={<FindDoctors />} />
+  <Route path="/prices" element={<ComparePrices />} />
+  <Route path="/records" element={<UploadRecords />} />
+  <Route path="/schedule" element={<Schedule />} />
+  <Route path="/dashboard" element={<Dashboard />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/create-account" element={<CreateAccount />} />
+</Routes>
 
         <Footer />
       </div>
