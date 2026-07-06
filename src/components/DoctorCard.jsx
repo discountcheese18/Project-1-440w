@@ -14,7 +14,7 @@ function DoctorCard({ doctor }) {
 
       <p><strong>Consultation:</strong> ${doctor.price}</p>
 
-      <button onClick={() => alert(`Second opinion request sent to ${doctor.name}`)}>
+      <button onClick={() => alert(`Second opinion request sent to ${doctor.name}.`)}>
   Request Second Opinion
 </button>
 

@@ -4,7 +4,7 @@ function PriceCard({ provider }) {
       <h2>{provider.provider}</h2>
 
       <p>
-        <strong>Treatment:</strong> {provider.treatment}
+        <strong>Treatment:</strong> {provider.issue}
       </p>
 
       <p>
@@ -19,9 +19,13 @@ function PriceCard({ provider }) {
         <strong>Wait Time:</strong> {provider.wait}
       </p>
 
-      <button onClick={() => alert("Provider selected. Continue to scheduling.")}>
-  Select Provider
-</button>
+      <p>
+        <strong>Type:</strong> {provider.type}
+      </p>
+
+      <button onClick={() => alert(`${provider.provider} selected. Continue to scheduling.`)}>
+        Select Provider
+      </button>
     </div>
   );
 }

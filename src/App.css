@@ -204,3 +204,133 @@ th {
     font-size: 40px;
   }
 }
+.search-box {
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #0f766e;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.results-count {
+  text-align: center;
+  font-weight: bold;
+  color: #475569;
+  margin-bottom: 30px;
+}
+.transparency-note {
+  background: #ecfeff;
+  border-left: 5px solid #0f766e;
+  padding: 18px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto 25px;
+  color: #134e4a;
+  font-weight: bold;
+}
+
+.sort-box {
+  max-width: 350px;
+  margin: 0 auto 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sort-box select {
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid #0f766e;
+  border-radius: 8px;
+}
+.comparison-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 25px;
+}
+
+.comparison-controls label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #134e4a;
+}
+
+.comparison-controls select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #0f766e;
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+}
+
+.results-count {
+  text-align: center;
+  font-weight: bold;
+  color: #0f766e;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 800px) {
+  .comparison-controls {
+    grid-template-columns: 1fr;
+  }
+}
+.comparison-controls select {
+  color: #000;
+  background: white;
+}
+
+.comparison-controls option {
+  color: #000;
+  background: white;
+}
+.comparison-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto 25px;
+}
+
+.comparison-controls label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #134e4a;
+}
+
+.comparison-controls select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #0f766e;
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+  color: #000;
+}
+
+.comparison-controls option {
+  color: #000;
+  background: white;
+}
+
+.results-count {
+  text-align: center;
+  font-weight: bold;
+  color: #0f766e;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+  .comparison-controls {
+    grid-template-columns: 1fr;
+  }
+}
