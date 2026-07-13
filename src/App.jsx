@@ -11,7 +11,8 @@ import Schedule from "./pages/Schedule";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
-
+import Profile from "./pages/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 function App() {
@@ -26,7 +27,22 @@ function App() {
   <Route path="/prices" element={<ComparePrices />} />
   <Route path="/records" element={<UploadRecords />} />
   <Route path="/schedule" element={<Schedule />} />
-  <Route path="/dashboard" element={<Dashboard />} />
+  <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  }
+/>
   <Route path="/login" element={<Login />} />
   <Route path="/create-account" element={<CreateAccount />} />
 </Routes>
