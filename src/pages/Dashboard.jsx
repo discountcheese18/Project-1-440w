@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import {
   collection,
+  deleteDoc,
+  doc,
   onSnapshot,
   query,
   where,
@@ -18,6 +20,8 @@ function Dashboard() {
   const [appointments, setAppointments] = useState([]);
   const [appointmentsLoading, setAppointmentsLoading] = useState(true);
   const [appointmentsError, setAppointmentsError] = useState("");
+  const [deletingAppointmentId, setDeletingAppointmentId] =
+    useState("");
 
   useEffect(() => {
     let unsubscribeAppointments = null;
@@ -75,6 +79,32 @@ function Dashboard() {
       navigate("/login");
     } catch (error) {
       console.error("Logout failed:", error);
+    }
+  };
+
+  const handleCancelAppointment = async (appointment) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to cancel your ${
+        appointment.specialty || "medical"
+      } appointment?`
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      setDeletingAppointmentId(appointment.id);
+      setAppointmentsError("");
+
+      await deleteDoc(doc(db, "appointments", appointment.id));
+    } catch (error) {
+      console.error("Error cancelling appointment:", error);
+      setAppointmentsError(
+        "The appointment could not be cancelled. Please try again."
+      );
+    } finally {
+      setDeletingAppointmentId("");
     }
   };
 
@@ -145,16 +175,19 @@ function Dashboard() {
         <div className="stat-card">
           <span>Appointments</span>
           <h2>{appointments.length}</h2>
+
           <p>
             {nextAppointment
-              ? `Next visit: ${formatAppointmentDate(nextAppointment.date)}`
+              ? `Next visit: ${formatAppointmentDate(
+                  nextAppointment.date
+                )}`
               : "No appointments scheduled"}
           </p>
         </div>
 
         <div className="stat-card">
           <span>Estimated Savings</span>
-          <h2>$420</h2>
+          <h2>$385</h2>
           <p>Based on recent price searches</p>
         </div>
       </div>
@@ -165,7 +198,9 @@ function Dashboard() {
 
           {appointmentsLoading && <p>Loading appointments...</p>}
 
-          {appointmentsError && <p>{appointmentsError}</p>}
+          {appointmentsError && (
+            <p className="firebase-error">{appointmentsError}</p>
+          )}
 
           {!appointmentsLoading &&
             !appointmentsError &&
@@ -174,22 +209,38 @@ function Dashboard() {
             )}
 
           {!appointmentsLoading &&
-            !appointmentsError &&
             appointments.map((appointment) => (
               <div className="list-item" key={appointment.id}>
                 <div>
                   <strong>
-                    {appointment.specialty || "Medical Appointment"}
+                    {appointment.specialty ||
+                      "Medical Appointment"}
                   </strong>
 
                   <p>
-                    {appointment.provider || "Healthcare Provider"} •{" "}
-                    {formatAppointmentDate(appointment.date)}
+                    {appointment.provider ||
+                      "Healthcare Provider"}{" "}
+                    • {formatAppointmentDate(appointment.date)}
                   </p>
 
                   {appointment.reason && (
                     <p>{appointment.reason}</p>
                   )}
+
+                  <button
+                    type="button"
+                    className="cancel-appointment-button"
+                    onClick={() =>
+                      handleCancelAppointment(appointment)
+                    }
+                    disabled={
+                      deletingAppointmentId === appointment.id
+                    }
+                  >
+                    {deletingAppointmentId === appointment.id
+                      ? "Cancelling..."
+                      : "Cancel Appointment"}
+                  </button>
                 </div>
 
                 <span className="status pending">

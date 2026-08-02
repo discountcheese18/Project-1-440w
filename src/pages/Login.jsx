@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { auth } from "../firebase";
 import "../App.css";
 
@@ -13,7 +16,9 @@ function Login() {
   });
 
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -24,6 +29,7 @@ function Login() {
     }));
 
     setError("");
+    setMessage("");
   };
 
   const handleLogin = async (event) => {
@@ -37,6 +43,7 @@ function Login() {
     try {
       setIsLoading(true);
       setError("");
+      setMessage("");
 
       await signInWithEmailAndPassword(
         auth,
@@ -48,24 +55,64 @@ function Login() {
     } catch (firebaseError) {
       console.error(firebaseError);
 
-      let message = "Unable to sign in. Please try again.";
+      let errorMessage = "Unable to sign in. Please try again.";
 
       if (
         firebaseError.code === "auth/invalid-credential" ||
         firebaseError.code === "auth/wrong-password" ||
         firebaseError.code === "auth/user-not-found"
       ) {
-        message = "The email or password is incorrect.";
+        errorMessage = "The email or password is incorrect.";
       } else if (firebaseError.code === "auth/invalid-email") {
-        message = "Please enter a valid email address.";
+        errorMessage = "Please enter a valid email address.";
       } else if (firebaseError.code === "auth/too-many-requests") {
-        message =
+        errorMessage =
           "Too many unsuccessful attempts. Please wait and try again.";
       }
 
-      setError(message);
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    const email = form.email.trim();
+
+    setError("");
+    setMessage("");
+
+    if (!email) {
+      setError(
+        "Enter your email address above before requesting a password reset."
+      );
+      return;
+    }
+
+    try {
+      setIsResetting(true);
+
+      await sendPasswordResetEmail(auth, email);
+
+      setMessage(
+        "Password reset email sent. Check your inbox and spam folder."
+      );
+    } catch (firebaseError) {
+      console.error("Password reset failed:", firebaseError);
+
+      let errorMessage =
+        "The password reset email could not be sent.";
+
+      if (firebaseError.code === "auth/invalid-email") {
+        errorMessage = "Please enter a valid email address.";
+      } else if (firebaseError.code === "auth/too-many-requests") {
+        errorMessage =
+          "Too many reset requests. Please wait before trying again.";
+      }
+
+      setError(errorMessage);
+    } finally {
+      setIsResetting(false);
     }
   };
 
@@ -90,7 +137,29 @@ function Login() {
           onChange={handleChange}
         />
 
+        <button
+          type="button"
+          onClick={handlePasswordReset}
+          disabled={isResetting}
+          style={{
+            background: "none",
+            border: "none",
+            color: "#0b63ce",
+            cursor: "pointer",
+            padding: "0",
+            textDecoration: "underline",
+          }}
+        >
+          {isResetting ? "Sending reset email..." : "Forgot Password?"}
+        </button>
+
         {error && <p className="firebase-error">{error}</p>}
+
+        {message && (
+          <p style={{ color: "green", textAlign: "center" }}>
+            {message}
+          </p>
+        )}
 
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Signing In..." : "Sign In"}

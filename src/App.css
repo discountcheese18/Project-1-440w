@@ -1213,3 +1213,23 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 }
+.cancel-appointment-button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #c62828;
+  border-radius: 6px;
+  background-color: white;
+  color: #c62828;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-appointment-button:hover {
+  background-color: #c62828;
+  color: white;
+}
+
+.cancel-appointment-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
