@@ -1,114 +1,111 @@
 # Remedium Health Market
 
-## Overview
+Remedium Health Market is a healthcare marketplace prototype developed as the Penn State IST 440W Capstone Project.
 
-Remedium Health Market is a healthcare marketplace prototype developed as part of the Penn State IST 440W Capstone Project.
+The application provides a centralized platform where patients can:
 
-The platform is designed to improve healthcare transparency by allowing patients to compare estimated treatment prices, obtain multiple medical opinions, securely share medical records, and schedule appointments through a single web application.
-
----
-
-## Features
-
-- Compare estimated treatment prices between healthcare providers
-- Browse healthcare providers and specialists
-- Request second medical opinions
-- Upload and manage medical records
+- Compare estimated treatment prices
+- Browse healthcare providers
 - Schedule appointments
-- Patient dashboard displaying healthcare activity
-- Modern responsive user interface built with React
+- Manage patient profiles
+- Upload and verify medical records
+- View healthcare information through a personalized dashboard
+
+The project was built using **React**, **Firebase Authentication**, and **Cloud Firestore** to demonstrate a modern, secure healthcare web application.
 
 ---
 
-## Technologies Used
+## Technologies
 
 - React
 - Vite
 - JavaScript
-- HTML5
-- CSS3
+- Firebase Authentication
+- Cloud Firestore
 - React Router
+- HTML/CSS
 
 ---
 
-## Installation
+# Installation and Setup
 
-Clone the repository:
+## Requirements
+
+Before running the project, make sure the following software is installed:
+
+- Node.js 20.19 or newer
+- npm, which is included with Node.js
+- Git, if cloning through the terminal
+
+Verify the installations:
+
+```bash
+node --version
+npm --version
+git --version
+```
+
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/discountcheese18/Project-1-440w.git
 ```
 
-Navigate to the project folder:
+Alternatively, select **Code > Download ZIP** on GitHub, extract the ZIP file, and open the extracted project folder.
+
+## 2. Navigate to the project folder
 
 ```bash
 cd Project-1-440w
 ```
 
-Install dependencies:
+## 3. Install the project dependencies
+
+```bash
+npm ci
+```
+
+If `npm ci` does not work, use:
 
 ```bash
 npm install
 ```
 
-Start the development server:
+## 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open the local development URL shown in the terminal (typically `http://localhost:5173`, though Vite may use another available port such as `5174` or `5175`).
+## 5. Open the application
 
----
+Open the local URL displayed in the terminal, typically:
 
-## Project Objectives
+```text
+http://localhost:5173
+```
 
-The primary objectives of Remedium Health Market are to:
+If port 5173 is already being used, Vite will display another available port such as 5174 or 5175.
 
-- Increase healthcare price transparency
-- Simplify obtaining second medical opinions
-- Centralize medical record sharing
-- Improve appointment scheduling
-- Help patients make more informed healthcare decisions
+## Firebase
 
----
+Firebase Authentication and Cloud Firestore are already configured for this prototype. No additional Firebase setup or `.env` file is required.
+## Features
 
-## Current Prototype
-
-The current prototype includes:
-
-- Home Page
-- Provider Search
-- Treatment Price Comparison
-- Medical Record Upload
-- Appointment Scheduling
-- Patient Dashboard
-
----
-
-## Future Enhancements
-
-- User authentication
-- Secure patient messaging
-- Insurance verification
-- Provider ratings and reviews
-- Interactive provider map
-- Real-time appointment availability
-- Mobile application
-- Electronic Health Record (EHR) integration
-
----
-
-## Project Status
-
-This repository contains the implementation prototype developed for the Penn State IST 440W Capstone Project. The application demonstrates the core functionality and user interface for the proposed healthcare marketplace.
+- Secure user authentication
+- Patient dashboard
+- Healthcare provider search
+- Treatment price comparison
+- Appointment scheduling
+- Patient profile management
+- Medical record verification (SHA-256 demo)
 
 ---
 
 ## Author
 
-Robert Bleecker
+**Robert Bleecker**
 
 Penn State University
 
-IST 440W Capstone Project
+IST 440W Senior Capstone Project
