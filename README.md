@@ -33,9 +33,9 @@ The project was built using **React**, **Firebase Authentication**, and **Cloud 
 
 Before running the project, make sure the following software is installed:
 
-- Node.js 20.19 or newer
-- npm, which is included with Node.js
-- Git, if cloning through the terminal
+- Git
+- Node.js (20.19 or newer)
+- npm (included with Node.js)
 
 Verify the installations:
 
@@ -61,11 +61,6 @@ cd Project-1-440w
 
 ## 3. Install the project dependencies
 
-```bash
-npm ci
-```
-
-If `npm ci` does not work, use:
 
 ```bash
 npm install
