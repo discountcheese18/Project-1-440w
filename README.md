@@ -1,55 +1,68 @@
 # Remedium Health Market
 
-## Overview
+Remedium Health Market is a healthcare marketplace prototype developed as the Penn State IST 440W Capstone Project.
 
-Remedium Health Market is a healthcare marketplace prototype developed as part of the Penn State IST 440W Capstone Project.
+The application provides a centralized platform where patients can:
 
-The platform is designed to improve healthcare transparency by allowing patients to compare estimated treatment prices, obtain multiple medical opinions, securely share medical records, and schedule appointments through a single web application.
-
----
-
-## Features
-
-- Compare estimated treatment prices between healthcare providers
-- Browse healthcare providers and specialists
-- Request second medical opinions
-- Upload and manage medical records
+- Compare estimated treatment prices
+- Browse healthcare providers
 - Schedule appointments
-- Patient dashboard displaying healthcare activity
-- Modern responsive user interface built with React
+- Manage patient profiles
+- Upload and verify medical records
+- View healthcare information through a personalized dashboard
+
+The project was built using **React**, **Firebase Authentication**, and **Cloud Firestore** to demonstrate a modern, secure healthcare web application.
 
 ---
 
-## Technologies Used
+## Technologies
 
 - React
 - Vite
 - JavaScript
-- HTML5
-- CSS3
+- Firebase Authentication
+- Cloud Firestore
 - React Router
+- HTML/CSS
 
 ---
 
 ## Installation
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/discountcheese18/Project-1-440w.git
 ```
 
-Navigate to the project folder:
+### 2. Navigate into the project
 
 ```bash
 cd Project-1-440w
 ```
 
-Install dependencies:
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
+
+### 4. Configure Firebase
+
+Create a `.env` file in the project root and add your Firebase configuration values:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+---
+
+## Run the Project
 
 Start the development server:
 
@@ -57,58 +70,26 @@ Start the development server:
 npm run dev
 ```
 
-Open the local development URL shown in the terminal (typically `http://localhost:5173`, though Vite may use another available port such as `5174` or `5175`).
+Open your browser and navigate to the local URL displayed in the terminal (typically `http://localhost:5173`).
 
 ---
 
-## Project Objectives
+## Features
 
-The primary objectives of Remedium Health Market are to:
-
-- Increase healthcare price transparency
-- Simplify obtaining second medical opinions
-- Centralize medical record sharing
-- Improve appointment scheduling
-- Help patients make more informed healthcare decisions
-
----
-
-## Current Prototype
-
-The current prototype includes:
-
-- Home Page
-- Provider Search
-- Treatment Price Comparison
-- Medical Record Upload
-- Appointment Scheduling
-- Patient Dashboard
-
----
-
-## Future Enhancements
-
-- User authentication
-- Secure patient messaging
-- Insurance verification
-- Provider ratings and reviews
-- Interactive provider map
-- Real-time appointment availability
-- Mobile application
-- Electronic Health Record (EHR) integration
-
----
-
-## Project Status
-
-This repository contains the implementation prototype developed for the Penn State IST 440W Capstone Project. The application demonstrates the core functionality and user interface for the proposed healthcare marketplace.
+- Secure user authentication
+- Patient dashboard
+- Healthcare provider search
+- Treatment price comparison
+- Appointment scheduling
+- Patient profile management
+- Medical record verification (SHA-256 demo)
 
 ---
 
 ## Author
 
-Robert Bleecker
+**Robert Bleecker**
 
 Penn State University
 
-IST 440W Capstone Project
+IST 440W Senior Capstone Project
