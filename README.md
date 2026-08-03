@@ -35,7 +35,7 @@ The project was built using **React**, **Firebase Authentication**, and **Cloud 
 git clone https://github.com/discountcheese18/Project-1-440w.git
 ```
 
-### 2. Navigate into the project folder
+### 2. Navigate to the project directory
 
 ```bash
 cd Project-1-440w
@@ -47,33 +47,26 @@ cd Project-1-440w
 npm install
 ```
 
-### 4. Configure Firebase
-
-Create a Firebase project and enable:
-
-- Firebase Authentication (Email/Password)
-- Cloud Firestore
-
-Create a `.env` file in the project root and add your Firebase configuration values.
-
-```env
-VITE_FIREBASE_API_KEY=...
-VITE_FIREBASE_AUTH_DOMAIN=...
-VITE_FIREBASE_PROJECT_ID=...
-VITE_FIREBASE_STORAGE_BUCKET=...
-VITE_FIREBASE_MESSAGING_SENDER_ID=...
-VITE_FIREBASE_APP_ID=...
-```
-
-### 5. Start the development server
+### 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in the terminal (typically `http://localhost:5173`).
+### 5. Open the application
 
+Open your web browser and navigate to the local URL displayed in the terminal (typically `http://localhost:5173`).
+
+If port **5173** is already in use, Vite will automatically use the next available port (such as `5174` or `5175`) and display the correct URL in the terminal.
 ---
+
+## Requirements
+
+Before running the project, make sure the following software is installed:
+
+- Node.js (version 18 or newer recommended)
+- npm (included with Node.js)
+- Git
 
 ## Features
 
