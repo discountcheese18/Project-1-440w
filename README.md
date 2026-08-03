@@ -27,7 +27,7 @@ The project was built using **React**, **Firebase Authentication**, and **Cloud 
 
 ---
 
-## Installation
+# Installation
 
 ### 1. Clone the repository
 
@@ -35,13 +35,13 @@ The project was built using **React**, **Firebase Authentication**, and **Cloud 
 git clone https://github.com/discountcheese18/Project-1-440w.git
 ```
 
-### 2. Navigate into the project
+### 2. Navigate into the project folder
 
 ```bash
 cd Project-1-440w
 ```
 
-### 3. Install dependencies
+### 3. Install project dependencies
 
 ```bash
 npm install
@@ -49,28 +49,29 @@ npm install
 
 ### 4. Configure Firebase
 
-Create a `.env` file in the project root and add your Firebase configuration values:
+Create a Firebase project and enable:
+
+- Firebase Authentication (Email/Password)
+- Cloud Firestore
+
+Create a `.env` file in the project root and add your Firebase configuration values.
 
 ```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
 ```
 
----
-
-## Run the Project
-
-Start the development server:
+### 5. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open your browser and navigate to the local URL displayed in the terminal (typically `http://localhost:5173`).
+Open the local URL shown in the terminal (typically `http://localhost:5173`).
 
 ---
 
