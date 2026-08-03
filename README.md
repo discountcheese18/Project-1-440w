@@ -27,47 +27,69 @@ The project was built using **React**, **Firebase Authentication**, and **Cloud 
 
 ---
 
-# Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/discountcheese18/Project-1-440w.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
-cd Project-1-440w
-```
-
-### 3. Install project dependencies
-
-```bash
-npm install
-```
-
-### 4. Start the development server
-
-```bash
-npm run dev
-```
-
-### 5. Open the application
-
-Open your web browser and navigate to the local URL displayed in the terminal (typically `http://localhost:5173`).
-
-If port **5173** is already in use, Vite will automatically use the next available port (such as `5174` or `5175`) and display the correct URL in the terminal.
----
+# Installation and Setup
 
 ## Requirements
 
 Before running the project, make sure the following software is installed:
 
-- Node.js (version 18 or newer recommended)
-- npm (included with Node.js)
-- Git
+- Node.js 20.19 or newer
+- npm, which is included with Node.js
+- Git, if cloning through the terminal
 
+Verify the installations:
+
+```bash
+node --version
+npm --version
+git --version
+```
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/discountcheese18/Project-1-440w.git
+```
+
+Alternatively, select **Code > Download ZIP** on GitHub, extract the ZIP file, and open the extracted project folder.
+
+## 2. Navigate to the project folder
+
+```bash
+cd Project-1-440w
+```
+
+## 3. Install the project dependencies
+
+```bash
+npm ci
+```
+
+If `npm ci` does not work, use:
+
+```bash
+npm install
+```
+
+## 4. Start the development server
+
+```bash
+npm run dev
+```
+
+## 5. Open the application
+
+Open the local URL displayed in the terminal, typically:
+
+```text
+http://localhost:5173
+```
+
+If port 5173 is already being used, Vite will display another available port such as 5174 or 5175.
+
+## Firebase
+
+Firebase Authentication and Cloud Firestore are already configured for this prototype. No additional Firebase setup or `.env` file is required.
 ## Features
 
 - Secure user authentication
